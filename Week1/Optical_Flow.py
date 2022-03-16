@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[48]:
-
-
 import cv2
 import numpy as np
 import os
@@ -13,16 +10,10 @@ import seaborn as sns
 import flow_vis
 
 
-# In[2]:
-
-
 img45 = cv2.cvtColor(cv2.imread(os.path.join("results", "LKflow_000045_10.png"), cv2.IMREAD_UNCHANGED).astype(np.uint16), cv2.COLOR_BGR2RGB)
 img157 = cv2.cvtColor(cv2.imread(os.path.join("results", "LKflow_000157_10.png"), cv2.IMREAD_UNCHANGED).astype(np.uint16), cv2.COLOR_BGR2RGB)
 img45_GT = cv2.cvtColor(cv2.imread(os.path.join("results", "000045_10.png"), cv2.IMREAD_UNCHANGED).astype(np.uint16), cv2.COLOR_BGR2RGB)
 img157_GT = cv2.cvtColor(cv2.imread(os.path.join("results", "000157_10.png"), cv2.IMREAD_UNCHANGED).astype(np.uint16), cv2.COLOR_BGR2RGB)
-
-
-# In[64]:
 
 
 def show_field(flow, gray, step=30, scale=0.5):
@@ -48,10 +39,7 @@ def show_field(flow, gray, step=30, scale=0.5):
     plt.axis('off')
     plt.show()
 
-
-# In[3]:
-
-
+    
 def transform_annotation(img):
     
     flow_u = (img[:,:,0].astype(float) - 2. ** 15) / 64.0
@@ -59,9 +47,6 @@ def transform_annotation(img):
     valid  = img[:,:,2].astype(bool)
     
     return flow_u, flow_v, valid
-
-
-# In[88]:
 
 
 GT_u, GT_v, GT_valid = transform_annotation(img157_GT)
@@ -79,17 +64,11 @@ fig.colorbar(im, cax = cbar_ax)
 plt.show()
 
 
-ths = list(range(55)) #int(motion_vectors_dist[GT_valid != 0].max())))
 plt.figure(figsize=(12,8))
 plt.title("Errors distribution (in pixels) for img157")
 sns.histplot(motion_vectors_dist[GT_valid != 0], stat="density", bins=range(25), color="red")
 plt.xlim(0, 50)
 plt.show()
-
-    
-
-
-# In[69]:
 
 
 gray = cv2.cvtColor(cv2.imread(os.path.join("results", "colored_000157_10.png")), cv2.COLOR_BGR2GRAY)
@@ -97,9 +76,6 @@ show_field(np.dstack((GT_u, GT_v, GT_valid)),gray,step=15,scale=.3)
 
 flow_color = flow_vis.flow_to_color(np.dstack((GT_u, GT_v)), convert_to_bgr=False)
 Image.fromarray(flow_color)
-
-
-# In[90]:
 
 
 GT_u, GT_v, GT_valid = transform_annotation(img45_GT)
@@ -117,7 +93,6 @@ fig.colorbar(im, cax = cbar_ax)
 plt.show()
 
 
-ths = list(range(55)) #int(motion_vectors_dist[GT_valid != 0].max())))
 plt.figure(figsize=(12,8))
 plt.title("Errors distribution (in pixels) for img45")
 sns.histplot(motion_vectors_dist[GT_valid != 0], stat="density", bins=range(50), color="orange")
@@ -125,10 +100,6 @@ plt.xlim(0, 50)
 plt.show()
 
     
-
-
-# In[72]:
-
 
 flow_color = flow_vis.flow_to_color(np.dstack((GT_u, GT_v)), convert_to_bgr=False)
 Image.fromarray(flow_color)
