@@ -1,6 +1,17 @@
 import numpy as np
 
 
+def get_of_metrics(GT_u, GT_v, u, v, mask, th):
+    
+    motion_vectors = np.square(GT_u - u) + np.square(GT_v - v)
+    motion_vectors_dist = np.sqrt(motion_vectors)
+
+    msen = np.mean(np.sqrt(motion_vectors)[mask != 0])
+    pepn = (motion_vectors_dist[mask != 0] > th).sum() / (mask != 0).sum()  # erroneous / total
+    
+    return motion_vectors_dist, msen, pepn
+
+
 def get_iou(bb1, bb2):
     
     """
