@@ -9,4 +9,8 @@
 <br>
   
 Each week's work is put into its own folder. Check the folders for more detailed information about the code.
+
+<h4> Week 1 </h4>
+
+<h4> Week 2 </h4>
  
