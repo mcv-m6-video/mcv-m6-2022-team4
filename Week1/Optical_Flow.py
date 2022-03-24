@@ -8,7 +8,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import seaborn as sns
 import flow_vis
-
+from metrics import *
 
 img45 = cv2.cvtColor(cv2.imread(os.path.join("results", "LKflow_000045_10.png"), cv2.IMREAD_UNCHANGED).astype(np.uint16), cv2.COLOR_BGR2RGB)
 img157 = cv2.cvtColor(cv2.imread(os.path.join("results", "LKflow_000157_10.png"), cv2.IMREAD_UNCHANGED).astype(np.uint16), cv2.COLOR_BGR2RGB)
