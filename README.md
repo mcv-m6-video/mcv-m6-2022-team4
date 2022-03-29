@@ -33,3 +33,16 @@ Find the bounding boxes by determining the objects in the foreground.
 <li> Trying SOTA Background segmentation approaches
 <li> Effect of different color spaces in Gaussian
 </ol>
+
+
+<h3> Week 3 </h3>
+<h5> Main Task: </h5>
+Object Detection and Object Tracking
+<br> <br>
+<b> Tasks: </b>
+<ol>
+<li> Try pretrained networks for Object Detection
+<li> Finetune a network on our dataset
+<li> Object Tracking with Maximum Overlap
+<li> Object Tracking with Kalman Filter
+</ol>
