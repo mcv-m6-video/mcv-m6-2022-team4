@@ -23,3 +23,6 @@ Detectron2 is used for Object Detection tasks. Evaluation is done with CocoEvalu
 
 <h3> Object Tracking </h3>
 
+<b> sort.py: </b> SORT for kalman filters. More detailed information can be found <a href="https://github.com/abewley/sort"> here. </a>
+
+<b> tracking.py </b> Maximum Overlap tracker.
