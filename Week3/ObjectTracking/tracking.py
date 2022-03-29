@@ -1,13 +1,12 @@
 import pandas as pd
-from read_files import parse_aicity_rects, save_aicity_rects, get_annotations
-from utils import bb_dict_to_txt
+from ../read_files import parse_aicity_rects, save_aicity_rects, get_annotations
+from ../utils import bb_dict_to_txt
 import pickle
-from metrics import get_iou
+from ../metrics import get_iou
 
 tracked_object_dic = {}
 
 
-# +
 class tracked_object:
     TRACKS_COUNTER = 0
     def __init__(self, idd, bbox, tracker_life = 5):
