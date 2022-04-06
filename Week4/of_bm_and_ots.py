@@ -11,6 +11,29 @@ import pandas as pd
 import time
 
 
+def LK_flow(previous_frame, current_frame):
+
+    height, width = previous_frame.shape[:2]
+    # dense flow: one point for each pixel
+    p0 = np.array([[x, y] for y in range(height) for x in range(width)], dtype=np.float32).reshape((-1, 1, 2))
+
+    # params for lucas-kanade optical flow
+    lk_params = dict(winSize=(15, 15), maxLevel=2, criteria=(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))
+
+    tic = time.time()
+    p1, st, err = cv2.calcOpticalFlowPyrLK(previous_frame, current_frame, p0, None, **lk_params)
+    toc = time.time()
+
+    p0 = p0.reshape((height, width, 2))
+    p1 = p1.reshape((height, width, 2))
+    st = st.reshape((height, width))
+
+    # flow field computed by subtracting prev points from next points
+    flow = p1 - p0
+    flow[st == 0] = 0
+    return flow, tic, toc
+
+
 def exhaustive_search(template, target, metric='cv2.TM_CCORR_NORMED'):
 
     
@@ -104,3 +127,23 @@ def main():
                               }, ignore_index=True)
         
         df_res.to_csv("block_match.csv", index=False)
+        
+    print("Done with Block Matching!")
+    
+    print("Lucas-Kanade")
+    flow, tic, toc = LK_flow(img1, img2)
+    mse, pepn = get_metrics(gt_flow, flow)
+    print("MSEN:{}, PPEN:{}".format(mse, pepn))
+    show_field(flow, img1, step=20, scale=0.75)
+    
+    print("Farneback")
+    flow = cv2.calcOpticalFlowFarneback(img1, img2, None, 0.5, 3, 15, 3, 5, 1.2, 0)
+    mse, pepn = get_metrics(gt_flow, flow)
+    print("MSEN:{}, PPEN:{}".format(mse, pepn))
+    show_field(flow, img1, step=20, scale=0.75)
+    
+    print("PyFlow")
+    flow = np.load("/content/pyflow/examples/outFlow.npy")
+    mse, pepn = get_metrics(gt_flow, flow)
+    print("MSEN:{}, PPEN:{}".format(mse, pepn))
+    show_field(flow, img1, step=20, scale=0.75)
