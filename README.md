@@ -46,3 +46,15 @@ Object Detection and Object Tracking
 <li> Object Tracking with Maximum Overlap
 <li> Object Tracking with Kalman Filter
 </ol>
+
+
+<h3> Week 4 </h3>
+<h5> Main Task: </h5>
+Optical Flow and MTSC
+<br> <br>
+<b> Tasks: </b>
+<ol>
+<li> Optical Flow with Block Matcing
+<li> Off-the-shelf Optical Flow
+<li> MTSC (Multi Track Single Camera)
+</ol>
