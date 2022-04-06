@@ -2,6 +2,15 @@ Tasks are done in different conda environments, each one has its own yml file.
 
 <h4> Task 1: Optical Flow </h4>
 
+Both Task 1.1 and 1.2 are done in the of_bm_and_ots.py file. Code runs grid search for block matching algorithm and writes the results in a csv file. MSEN, PPEN, and inference time is calculated for each parameter combination. It then runs off-the-shelf methods and shows the quiver plot of optical flow.
+
+<h5> Tried Off-the-Shelf Methods </h5>
+<ul>
+  <li> <a href="https://docs.opencv.org/3.4/d4/dee/tutorial_optical_flow.html"> Lucas-Kanade </a>
+  <li> <a href="https://docs.opencv.org/3.4/dc/d6b/group__video__track.html#ga5d10ebbd59fe09c5f650289ec0ece5af"> Farneback </a>
+  <li> <a href="https://github.com/pathak22/pyflow"> PyFlow </a>
+</ul>
+
 <h4> Task 2: MTSC </h4>
 
 Network training and inference are done with <a href="https://detectron2.readthedocs.io/en/latest/index.html"> Detectron2 </a>.
