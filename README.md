@@ -81,3 +81,13 @@ Optical Flow and MTSC
 <li> Off-the-shelf Optical Flow
 <li> MTSC (Multi Track Single Camera)
 </ol>
+
+<h3> Week 5 </h3>
+<h5> Main Task: </h5>
+Multi Track Single Camera (MTSC) Tracking and Multi Track Multi Camera (MTMC) Tracking
+<br> <br>
+<b> Tasks: </b>
+<ol>
+<li> Improve the MTSC tracking approach done in the previous week
+<li> Implement MTMC tracking
+</ol>
