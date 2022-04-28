@@ -2,6 +2,8 @@
 
 <a href="https://docs.google.com/presentation/d/1b0QMpw4VCq5pxB1ervWR-RmGtVDo7NSKiWAb-98Pr3M/edit?usp=sharing"> Final Presentation </a>
 
+<a href="https://drive.google.com/drive/folders/1ZbrfaBpwtSWTxpwKVD4hcCfQAlJQiWdA?usp=sharing"> Final Presentation </a>
+
 
 <h5> Members </h5>
 <ul>
@@ -25,7 +27,7 @@
 
   </tr>
     <td>Marcos Conde</td>
-    <td><a href="https://github.com/mv-lab"> MV-Lab </a></td>
+    <td><a href="https://github.com/mv-lab"> mv-lab </a></td>
   </tr>
 </table>
 
