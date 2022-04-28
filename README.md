@@ -92,7 +92,7 @@ Multi Track Single Camera (MTSC) Tracking and Multi Track Multi Camera (MTMC) Tr
 <li> Implement MTMC tracking
 </ol>
 
-# Reeferences
+# References
 
 - https://github.com/mcv-m6-video/class2021 by Masters in Computer Vision, @xavigiro 
 - https://github.com/mcv-m6-video/mcv-m6-2021-team3 by Gemma Alaix, Josep Brugués, Clara Garcia, Aitor Sánchez
