@@ -4,7 +4,7 @@
 <br>
 <a href="https://www.overleaf.com/project/6273add67e9110351474315a"> Final Report </a>
 
-<a href="https://drive.google.com/drive/folders/1ZbrfaBpwtSWTxpwKVD4hcCfQAlJQiWdA?usp=sharing"> Demos </a>
+You can access the gifs we created from this <a href="https://drive.google.com/drive/folders/1ZbrfaBpwtSWTxpwKVD4hcCfQAlJQiWdA?usp=sharing">  link</a>.
 
 
 <h5> Members </h5>
